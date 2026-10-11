@@ -114,7 +114,7 @@ install:
 	# 7. Permissões, base MIME, limpeza de cache e reinício do Nautilus
 	@echo "Atualizando permissões e base de dados..."
 	@chmod 755 $(BIN_DIR)/gcode_thumbnailer $(BIN_DIR)/3mf_thumbnailer $(BIN_DIR)/stl_thumbnailer
-	@update-mime-database $(MIME_DIR)/..
+	@update-mime-database /usr/share/mime
 	@echo "Limpando cache de miniaturas do usuário ($(REAL_USER))..."
 	@rm -rf $(USER_HOME)/.cache/thumbnails/*
 	@rm -rf /root/.cache/thumbnails/*
@@ -129,7 +129,7 @@ uninstall:
 	rm -f $(BIN_DIR)/gcode_thumbnailer $(BIN_DIR)/3mf_thumbnailer $(BIN_DIR)/stl_thumbnailer
 	rm -f $(THUMB_DIR)/gcode.thumbnailer $(THUMB_DIR)/3mf.thumbnailer $(THUMB_DIR)/stl.thumbnailer $(THUMB_DIR)/openscad.thumbnailer
 	rm -f $(MIME_DIR)/gcode.xml
-	@update-mime-database $(MIME_DIR)/..
+	@update-mime-database /usr/share/mime
 	@rm -rf $(USER_HOME)/.cache/thumbnails/*
 	@killall nautilus 2>/dev/null || pkill -f nautilus 2>/dev/null || true
 	@echo "Desinstalação concluída!"
