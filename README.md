@@ -9,9 +9,10 @@ This is a small set of custom thumbnailer scripts (mostly for 3D printing format
 * `.stl` (Actually uses OpenSCAD to render as well)
 * `.blend` (uses the built-in `blender-thumbnailer` that comes with Blender)
 
-## Installation
+## Installation / Uninstall
 
 * sudo make install
+* sudo make uninstall
 
 ## Dependencies
 
